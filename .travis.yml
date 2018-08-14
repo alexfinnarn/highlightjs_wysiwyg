@@ -43,7 +43,7 @@ install:
   - export EXPRESS_HEADLESS_BEHAT_TAGS="~@exclude_all_bundles&&~@broken&&~@javascript"
   - export BUNDLE_BEHAT_TAGS="~@exclude_all_bundles&&~@broken"
 
-  # Copy scripts to root.
+  # Copy scripts to root. add comment...
   - cd ${ROOT_DIR}
   - ls -al
   - dkfkdjde
