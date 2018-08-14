@@ -12,7 +12,7 @@ earlyexit
 # Build Codebase.
 cd $ROOT_DIR
 echo "Cloning Backdrop repo..."
-git clone --branch 1.x --depth 1 git@github.com:backdrop/backdrop.git ${ROOT_DIR}/backdrop
+git clone --branch 1.x --depth 1 https://github.com/backdrop/backdrop.git ${ROOT_DIR}/backdrop
 
 cp ${ROOT_DIR}/${MODULE_NAME} ${ROOT_DIR}/backdrop/modules
 ls -al
