@@ -4,6 +4,11 @@
 composer global require "drush/drush:8.*"
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 
+mkdir ~/.drush/commands
+cd ~/.drush/commands
+
+git clone https://github.com/backdrop-contrib/drush.git backdrop
+
 # Build Behat dependencies.
 cd ${ROOT_DIR}/${MODULE_NAME}/tests/behat
 composer install --prefer-dist --no-interaction
