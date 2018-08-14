@@ -9,7 +9,7 @@
 cd ${ROOT_DIR}/backdrop
 ls -al
 
-$HOME/.composer/vendor/bin/drush si --db-url=mysql://root:@127.0.0.1/backdrop
+$HOME/.composer/vendor/bin/drush si --db-url=mysql://root:@127.0.0.1/backdrop -y
 
 #EXPRESS_COMMIT_HAS_BUILD="$(git log -2 --pretty=%B | awk '/./{line=$0} END{print line}' | grep '==build')"
 #
