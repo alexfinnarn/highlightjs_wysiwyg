@@ -16,10 +16,8 @@ addons:
   # The username and access key are stored in the Travis settings.
   sauce_connect: true
 
-mysql:
-  database: drupal
-  username: root
-  encoding: utf8
+services:
+ - mysql
 
 # Cache Composer and db export.
 # I removed caching of Drush since you have to clear Drush cache to get new Drupal versions.
@@ -36,7 +34,7 @@ install:
   - export TRAVIS_EVENT_TYPE
 
   # Name of bundle used as a placeholder in scripts.
-  - export BUNDLE_NAME="null"
+  - export MODULE_NAME="highlightjs_wysiwyg"
 
   # Behat tags. Allows you to include/exclude tags per bundle as needed.
   - export EXPRESS_JS_BEHAT_TAGS="~@exclude_all_bundles&&~@broken&&@javascript"
@@ -45,9 +43,7 @@ install:
 
   # Copy scripts to root. add comment...
   - cd ${ROOT_DIR}
-  - ls -al
-  - dkfkdjde
-  - cp -R ${ROOT_DIR}/express/tests/travis-ci/* ${ROOT_DIR}
+  - cp -R ${ROOT_DIR}/${MODULE_NAME}/tests/travis-ci/* ${ROOT_DIR}
 
   # Pulls in any helper functions used later in scripts.
   - source $ROOT_DIR/helper-functions.sh
@@ -57,6 +53,7 @@ install:
   - echo "Running install script..."
   - $ROOT_DIR/install.sh
   - echo ----
+  - ls -al
 
 before_script:
 

@@ -4,14 +4,14 @@
 phpenv config-rm xdebug.ini
 
 # Add database and settings.php file.
-mysql -e 'create database drupal;'
-cp $ROOT_DIR/drupal/profiles/express/tests/travis-ci/settings.travis.php $ROOT_DIR/drupal/sites/default/settings.php
+mysql -e 'create database backdrop;'
+#cp ${ROOT_DIR}/backdrop/modules/${MODULE_NAME}/tests/travis-ci/settings.travis.php ${ROOT_DIR}/drupal/sites/default/settings.php
 
 # Disable sendmail from https://www.drupal.org/project/phpconfig/issues/1826652.
 echo sendmail_path=`which true` >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
 
 # Add PHP config that somewhat matches current prod.
-phpenv config-add $ROOT_DIR/drupal/profiles/express/tests/travis-ci/config/express-php.ini
+#phpenv config-add $ROOT_DIR/drupal/profiles/express/tests/travis-ci/config/express-php.ini
 earlyexit
 
 # Change InnoDB settings that speed things up.
