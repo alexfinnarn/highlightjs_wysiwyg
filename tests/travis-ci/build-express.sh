@@ -7,6 +7,8 @@
 #fi
 
 cd ${ROOT_DIR}/backdrop
+ls -al
+exit 1
 
 $HOME/.composer/vendor/bin/drush si --db-url=mysql://root:@127.0.0.1/backdrop
 
