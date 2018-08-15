@@ -11,8 +11,6 @@ ls -al
 
 $HOME/.composer/vendor/bin/drush si --db-url=mysql://newuser:password@127.0.0.1/backdrop -y
 
-dkfsjfkjhsdf
-exit 1
 #EXPRESS_COMMIT_HAS_BUILD="$(git log -2 --pretty=%B | awk '/./{line=$0} END{print line}' | grep '==build')"
 #
 ## https://docs.travis-ci.com/user/caching/
