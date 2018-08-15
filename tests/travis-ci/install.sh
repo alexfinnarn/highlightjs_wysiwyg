@@ -7,6 +7,7 @@ export PATH="$HOME/.composer/vendor/bin:$PATH"
 mkdir -p ~/.drush/commands
 cd ~/.drush/commands
 
+# Need to use special runserver command branch.
 git clone --branch feature/146 https://github.com/backdrop-contrib/drush.git backdrop
 
 # Build Behat dependencies.
