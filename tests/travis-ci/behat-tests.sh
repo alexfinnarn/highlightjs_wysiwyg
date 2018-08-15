@@ -3,6 +3,7 @@
 # Start server.
 cd ${ROOT_DIR}/backdrop
 #$HOME/.composer/vendor/bin/drush runserver 127.0.0.1:8057 > /dev/null 2>&1 &
+$HOME/.composer/vendor/bin/drush cache-clear drush
 $HOME/.composer/vendor/bin/drush backdrop-runserver 127.0.0.1:8057
 nc -zvv 127.0.0.1 8057; out=$?; while [[ $out -ne 0 ]]; do echo "Retry hit port 8057..."; nc -zvv localhost 8057; out=$?; sleep 5; done
 earlyexit
