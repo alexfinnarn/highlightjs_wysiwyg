@@ -4,8 +4,13 @@
 phpenv config-rm xdebug.ini
 
 # Add database and settings.php file.
-mysql -e 'create database backdrop;'
+mysql -e 'CREATE DATABASE backdrop;'
+mysql -e 'CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';'
+mysql -e 'GRANT ALL PRIVILEGES ON * . * TO 'newuser'@'localhost';'
+mysql -e 'FLUSH PRIVILEGES;'
 #cp ${ROOT_DIR}/backdrop/modules/${MODULE_NAME}/tests/travis-ci/settings.travis.php ${ROOT_DIR}/drupal/sites/default/settings.php
+
+
 
 # Disable sendmail from https://www.drupal.org/project/phpconfig/issues/1826652.
 echo sendmail_path=`which true` >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
