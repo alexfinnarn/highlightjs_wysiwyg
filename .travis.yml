@@ -45,8 +45,6 @@ install:
   - cd ${ROOT_DIR}
   - cp -R ${ROOT_DIR}/${MODULE_NAME}/tests/travis-ci/* ${ROOT_DIR}
 
-  # Copy Behat for
-
   # Pulls in any helper functions used later in scripts.
   - source $ROOT_DIR/helper-functions.sh
 

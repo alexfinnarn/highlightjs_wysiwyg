@@ -22,26 +22,8 @@ git clone --branch 1.x --depth 1 https://github.com/backdrop/backdrop.git ${ROOT
 
 cp -R ${ROOT_DIR}/${MODULE_NAME} ${ROOT_DIR}/backdrop/modules
 
-# drush dl drupal-7.59
-# mkdir drupal && mv drupal-7.59/* drupal/
-# mkdir profiles && mv express drupal/profiles/
-
-# Harden Codebase.
-#cd $ROOT_DIR/drupal/modules
-#rm -rf php aggregator blog book color contact translation dashboard forum locale openid overlay poll rdf search statistics toolbar tracker trigger
-#earlyexit
-
-# Setup files.
+# Setup files? Does this need to happen in Backdrop?
 #mkdir -p $ROOT_DIR/drupal/sites/default/files/styles/preview/public/gallery/ && chmod -R 777 $ROOT_DIR/drupal/sites
 #mkdir $ROOT_DIR/tmp && chmod -R 777 $ROOT_DIR/tmp
-
-#if [ "${BUNDLE_NAME}" != "null" ]; then
-#
-#  # Move bundle to right place after build step.
-#  mkdir $ROOT_DIR/drupal/profiles/express/tests/behat/bundle_features
-#  cp -R $ROOT_DIR/$BUNDLE_NAME/tests/behat/features/* $ROOT_DIR/drupal/profiles/express/tests/behat/bundle_features
-#  mv $ROOT_DIR/$BUNDLE_NAME $ROOT_DIR/drupal/sites/all/modules/
-#
-#fi
 
 exit 0
