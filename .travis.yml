@@ -41,38 +41,31 @@ install:
   - export EXPRESS_HEADLESS_BEHAT_TAGS="~@exclude_all_bundles&&~@broken&&~@javascript"
   - export BUNDLE_BEHAT_TAGS="~@exclude_all_bundles&&~@broken"
 
-  # Copy scripts to root. add comment...
+  # Copy scripts to root.
   - cd ${ROOT_DIR}
   - cp -R ${ROOT_DIR}/${MODULE_NAME}/tests/travis-ci/* ${ROOT_DIR}
+
+  # Copy Behat for
 
   # Pulls in any helper functions used later in scripts.
   - source $ROOT_DIR/helper-functions.sh
 
   # Install and build dependencies.
-  - echo ----
   - echo "Running install script..."
   - $ROOT_DIR/install.sh
-  - echo ----
-  - ls -al
 
 before_script:
 
   # Setup config for PHP/MySQL, settings.php, and install database.
-  - echo ----
-  - echo Running setup script...
+  - echo "Running setup script..."
   - $ROOT_DIR/setup-config.sh
-  - echo ----
 
   # Perform the site install after removing Xdebug since it seems faster.
-  - echo ----
-  - echo Running build script...
+  - echo "Running build script..."
   - $ROOT_DIR/build-express.sh
-  - echo ----
 
 script:
 
   # Run Behat tests.
-  - echo ----
-  - echo Running Behat tests...
+  - echo "Running Behat tests..."
   - $ROOT_DIR/behat-tests.sh
-  - echo ----
