@@ -7,7 +7,8 @@ nc -zvv 127.0.0.1 8057; out=$?; while [[ $out -ne 0 ]]; do echo "Retry hit port 
 earlyexit
 
 echo "Running Express headless tests..."
-ls -al ${ROOT_DIR}/backdrop/modules
+ls -al ${ROOT_DIR}/backdrop
+ls -al ${ROOT_DIR}
 
 
 ${ROOT_DIR}/backdrop/modules/${MODULE_NAME}/tests/behat/bin/behat --stop-on-failure --strict --config ${ROOT_DIR}/backdrop/modules/${MODULE_NAME}/tests/behat/behat.travis.yml --verbose --tags ${EXPRESS_HEADLESS_BEHAT_TAGS}
