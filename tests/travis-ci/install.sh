@@ -20,8 +20,7 @@ cd $ROOT_DIR
 echo "Cloning Backdrop repo..."
 git clone --branch 1.x --depth 1 https://github.com/backdrop/backdrop.git ${ROOT_DIR}/backdrop
 
-cp ${ROOT_DIR}/${MODULE_NAME} ${ROOT_DIR}/backdrop/modules
-ls -al
+cp -R ${ROOT_DIR}/${MODULE_NAME} ${ROOT_DIR}/backdrop/modules
 
 # drush dl drupal-7.59
 # mkdir drupal && mv drupal-7.59/* drupal/
