@@ -8,7 +8,7 @@ mkdir -p ~/.drush/commands
 cd ~/.drush/commands
 
 # Need to use special runserver command branch.
-git clone --branch feature/146 https://github.com/backdrop-contrib/drush.git backdrop
+git clone --branch alex-test https://github.com/alexfinnarn/drush.git backdrop
 
 # Build Behat dependencies.
 cd ${ROOT_DIR}/${MODULE_NAME}/tests/behat
