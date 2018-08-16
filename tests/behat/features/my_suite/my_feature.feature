@@ -1,3 +1,4 @@
+@example
 Feature: Example Feature
   Go to the frontpage and see that it works.
 
