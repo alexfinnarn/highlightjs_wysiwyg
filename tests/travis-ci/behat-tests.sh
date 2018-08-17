@@ -8,7 +8,7 @@ earlyexit
 
 # Enable any additional modules used during test runs.
 echo Enabling additional testings modules...
-git clone https://github.com/backdrop-contrib/${ADD_CONTRIB_MODULES}.git ${ROOT_DIR}/backdrop/modules/
+git clone https://github.com/backdrop-contrib/${ADD_CONTRIB_MODULES}.git ${ROOT_DIR}/backdrop/modules/${ADD_CONTRIB_MODULES}
 $HOME/.composer/vendor/bin/drush en ${ADD_CONTRIB_MODULES} -y
 
 $HOME/.composer/vendor/bin/drush en ${ADD_CUSTOM_MODULES} -y
