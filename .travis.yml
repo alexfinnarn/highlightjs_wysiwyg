@@ -36,7 +36,7 @@ install:
   # Name of bundle used as a placeholder in scripts.
   - export MODULE_NAME="highlightjs_wysiwyg"
   - export ADD_CUSTOM_MODULES="backdrop_test_users"
-  - export ADD_CONTRIB_MODULES="shortcode,google_analytics"
+  - export ADD_CONTRIB_MODULES="shortcode google_analytics"
 
   # Behat tags. Allows you to include/exclude tags per bundle as needed.
   - export EXPRESS_JS_BEHAT_TAGS="~@exclude_all_bundles&&~@broken&&@javascript"

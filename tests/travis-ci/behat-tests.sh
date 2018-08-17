@@ -9,7 +9,7 @@ earlyexit
 # Enable any additional modules used during test runs.
 echo Enabling additional testings modules...
 
-for i in $(echo ${ADD_CONTRIB_MODULES} | sed "s/,/ /g")
+for i in $(echo ${ADD_CONTRIB_MODULES} | sed "s/ / /g")
 do
   git clone https://github.com/backdrop-contrib/${i}.git ${ROOT_DIR}/backdrop/modules/${i}
 done
