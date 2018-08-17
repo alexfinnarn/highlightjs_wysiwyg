@@ -93,7 +93,7 @@ class FeatureContext extends MinkContext
     $submit->click();
 
     // Need to figure out better way to check if logged in.
-    if (!$this->getSession()->getPage()->hasContent('Dashboard')) {
+    if (!$this->getSession()->getPage()->hasContent('Log out')) {
       throw new Exception(sprintf("Failed to log in as user '%s'", $role));
     }
   }
