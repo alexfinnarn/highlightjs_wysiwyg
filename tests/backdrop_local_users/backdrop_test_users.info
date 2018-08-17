@@ -1,0 +1,6 @@
+name = Behat Testing Suite Setup
+description = Sets up functionality needed to run the Express BDD test suite.
+type = module
+backdrop = 1.x
+version = 7.x-1.0
+package = Administration

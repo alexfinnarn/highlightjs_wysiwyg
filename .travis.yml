@@ -35,6 +35,7 @@ install:
 
   # Name of bundle used as a placeholder in scripts.
   - export MODULE_NAME="highlightjs_wysiwyg"
+  - export ADD_MODULES="backdrop_test_users"
 
   # Behat tags. Allows you to include/exclude tags per bundle as needed.
   - export EXPRESS_JS_BEHAT_TAGS="~@exclude_all_bundles&&~@broken&&@javascript"
