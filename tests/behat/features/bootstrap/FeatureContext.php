@@ -80,8 +80,8 @@ class FeatureContext extends MinkContext
     }
 
     // Fill fields with login information.
-    $element->fillField('CU Login Name', $role);
-    $element->fillField('IdentiKey Password', $role);
+    $element->fillField('Username or email', $role);
+    $element->fillField('Password', $role);
     $submit = $element->findButton('Log in');
 
     if (empty($submit)) {
