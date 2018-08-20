@@ -1,0 +1,5 @@
+[HighlightJSTests]
+name = HighlightJS WYSIWYG unit tests
+description = Unit tests for the HighlightJS WYSIWYG module.
+group = HighlightJS WYSIWYG
+file = highlightjs_wysiwyg.test

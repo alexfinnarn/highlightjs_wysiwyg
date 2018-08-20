@@ -7,7 +7,7 @@ nc -zvv 127.0.0.1 8057; out=$?; while [[ $out -ne 0 ]]; do echo "Retry hit port 
 earlyexit
 
 # Enable any additional modules used during test runs.
-echo Enabling additional testings modules...
+echo Enabling additional testing modules...
 
 for i in $(echo ${ADD_CONTRIB_MODULES} | sed "s/ / /g")
 do
@@ -20,7 +20,7 @@ $HOME/.composer/vendor/bin/drush cc all
 earlyexit
 
 # Enable module.
-cd $ROOT_DIR/backdrop
+cd ${ROOT_DIR}/backdrop
 echo Enabling bundle module...
 $HOME/.composer/vendor/bin/drush en ${MODULE_NAME} -y
 earlyexit

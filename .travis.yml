@@ -43,6 +43,9 @@ install:
   - export EXPRESS_HEADLESS_BEHAT_TAGS="~@exclude_all_bundles&&~@broken&&~@javascript"
   - export BUNDLE_BEHAT_TAGS="~@exclude_all_bundles&&~@broken"
 
+  # SimpleTest group.
+  - export SIMPLETEST_CLASSES="HighlightJS WYSIWYG"
+
   # Copy scripts to root.
   - cd ${ROOT_DIR}
   - cp -R ${ROOT_DIR}/${MODULE_NAME}/tests/travis-ci/* ${ROOT_DIR}
@@ -69,3 +72,7 @@ script:
   # Run Behat tests.
   - echo "Running Behat tests..."
   - $ROOT_DIR/behat-tests.sh
+
+  # Run SimpleTests.
+  - echo "Running SimpleTest tests..."
+  - $ROOT_DIR/run-simpletests.sh

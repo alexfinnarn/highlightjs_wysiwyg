@@ -1,0 +1,55 @@
+<?php
+
+/**
+ * @file
+ * Unit tests for the xmlsitemap module.
+ *
+ * @ingroup highlightjs_wysiwyg
+ */
+
+/**
+ * Helper test class with some added functions for testing.
+ */
+class HighlightJSTests extends BackdropWebTestCase {
+
+  protected $admin_user;
+
+  protected $profile = 'minimal';
+
+  function setUp($modules = array()) {
+    $modules = array(
+      'highlightjs_wysiwyg',
+      'shortcode',
+    );
+
+    parent::setUp($modules);
+
+    $this->backdropCreateContentType(array('type' => 'page', 'name' => 'Page'));
+    $this->backdropCreateContentType(array('type' => 'post', 'name' => 'Post'));
+
+    $this->admin_user = $this->backdropCreateUser(array('administer nodes', 'bypass node access', 'administer content types'));
+  }
+
+  function tearDown() {
+    // Capture any (remaining) watchdog errors.
+    //$this->assertNoWatchdogErrors();
+
+    parent::tearDown();
+  }
+
+  function testSomethingGood() {
+    $body_field = 'body[' . LANGUAGE_NONE . '][0][value]';
+
+    $node = $this->backdropCreateNode(array('status' => FALSE, 'uid' => $this->admin_user->uid));
+
+    $this->backdropLogin($this->admin_user);
+
+    $edit = array(
+      'title' => 'Test node title',
+      $body_field => 'Test node body',
+    );
+    $this->backdropPost('node/' . $node->nid . '/edit', $edit, t('Save'));
+
+    $this->assertText('Page Test node title has been updated. dlksfdjlskdjf');
+  }
+}

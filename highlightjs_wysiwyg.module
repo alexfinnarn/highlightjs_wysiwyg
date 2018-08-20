@@ -68,7 +68,7 @@ function csh_code_tips() {
 function highlightjs_wysiwyg_preprocess_page(&$variables) {
   // Add the JS and CSS assets if the page is supposed to have code syntax highlighting.
   $current_object = menu_get_object();
-  if (in_array($current_object->type, config_get('highlightjs_wysiwyg.settings','csh_enabled_node_types'), TRUE)) {
+  if ($current_object && in_array($current_object->type, config_get('highlightjs_wysiwyg.settings','csh_enabled_node_types'), TRUE)) {
     backdrop_add_css(backdrop_get_path('module', 'highlightjs_wysiwyg')
       . '/libraries/highlightjs/styles/' . config_get('highlightjs_wysiwyg.settings','csh_theme') . '.css');
     backdrop_add_css(backdrop_get_path('module', 'highlightjs_wysiwyg')
