@@ -44,7 +44,7 @@ install:
   - export BUNDLE_BEHAT_TAGS="~@exclude_all_bundles&&~@broken"
 
   # SimpleTest group.
-  - export SIMPLETEST_CLASSES="HighlightJS WYSIWYG"
+  - export SIMPLETEST_CLASSES="HighlightJSTests"
 
   # Copy scripts to root.
   - cd ${ROOT_DIR}
