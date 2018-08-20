@@ -50,6 +50,6 @@ class HighlightJSTests extends BackdropWebTestCase {
     );
     $this->backdropPost('node/' . $node->nid . '/edit', $edit, t('Save'));
 
-    $this->assertText('Page Test node title has been updated. dlksfdjlskdjf');
+    $this->assertText('Page Test node title has been updated.');
   }
 }
